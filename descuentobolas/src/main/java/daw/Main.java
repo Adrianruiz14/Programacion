@@ -23,7 +23,7 @@ public class Main {
         JOptionPane.showMessageDialog(null, texto);
         JOptionPane.showMessageDialog(null, "Terminada la explicación, tome su recibo y saque una bola de la caja.");
         Random random = new Random();
-        int bola = random.nextInt(5);
+        int bola = random.nextInt(1, 5); // 0 incluido
         String colorbola = "";
 
         if (bola == 1) {
@@ -51,23 +51,20 @@ public class Main {
         }
 
         do {
-            
-   
-        try {
 
-            precio = JOptionPane
-                    .showInputDialog("Tras sacar la bola " + colorbola + " . Introduzca el valor de su compra:");
+            try {
 
-            precioinicial = Double.parseDouble(precio);
+                precio = JOptionPane
+                        .showInputDialog("Tras sacar la bola " + colorbola + " . Introduzca el valor de su compra:");
 
-        } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(null, "No válido, introduzca el valor de su compra");
+                precioinicial = Double.parseDouble(precio);
 
-        }
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "No válido, introduzca el valor de su compra");
 
-             } while (precioinicial <= 0);
+            }
 
-         precioinicial = Double.parseDouble(precio);
+        } while (precioinicial <= 0);
 
         switch (bola) {
             case 1:
