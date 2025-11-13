@@ -1,10 +1,10 @@
-package daw;
+package memuero;
 
 import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-public class Main {
+public class memuero {
     public static void main(String[] args) {
 
         String precio = "";

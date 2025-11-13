@@ -1,6 +1,6 @@
 package daw;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,13 +25,13 @@ public class Main {
         System.out.println("------------------------------------------");
         System.out.println("Ejercicio 4: ");
 
-        Scanner teclado = new Scanner(System.in);
+        /* Scanner teclado = new Scanner(System.in);
         System.err.println("Introduce el tamaño del Array");
         int tamaño = teclado.nextInt();
         double[] arrayInt = funciones.tamañoarray(tamaño);
         System.out.println("El tamaño es " + tamaño);
         //¿Cómo se manda varios datos de una funcion a otra?
-        //¿Cómo se manda dato de una funcion a otra y luego volverla a mandar? 
+        //¿Cómo se manda dato de una funcion a otra y luego volverla a mandar?  /* */
 
     }
 
