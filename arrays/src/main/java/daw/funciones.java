@@ -16,7 +16,7 @@ public class funciones {
 
         }
 
-        int valorMaximo = arrayInt[0];
+        int valorMaximo = 0;
         for (int i = 0; i < arrayInt.length; i++) {
             if (arrayInt[i] > valorMaximo) {
                 valorMaximo = arrayInt[i];
@@ -64,11 +64,7 @@ public class funciones {
 
     }
 
-    public static int tamañoarray() {
 
-        int tamaño = 0;
 
-        return tamaño;
-        
     }
 }
