@@ -17,9 +17,7 @@ public class Main {
 
         System.out.println(Arrays.toString(ArrayMain));
 
-        int[] ArrayOut = ordenarArray(ArrayMain); //ESTO ES LA VINCULACIÓN
-
-        int[] ArrayFinalMain = ordenarArray(ArrayOut);
+        int[] ArrayFinalMain = ordenarArray(ArrayMain); // ESTO ES PARA TRAERME EL RETURN
 
         System.out.println(Arrays.toString(ArrayFinalMain));
 
@@ -38,12 +36,11 @@ public class Main {
 
     }
 
-    public static int[] ordenarArray (int[] arrayMain) {
+    public static int[] ordenarArray(int[] arrayMain) {
 
-        int[] arrayOrdenado = arrayMain ;
+        int[] arrayOrdenado = arrayMain;
 
-            int[] arrayFinal;
-        arrayFinal = new int[5];
+        int[] arrayFinal = new int[5];
         arrayFinal[0] = 0;
         arrayFinal[1] = 0;
         arrayFinal[2] = 0;
@@ -51,17 +48,22 @@ public class Main {
         arrayFinal[4] = 0;
 
         // Tengo que contar cuantos numeros iguales hay en cada posición
-        for (int i = 1; i < arrayOrdenado.length; i++) {
+        for (int i = 0; i < arrayOrdenado.length; i++) {
 
-            if (arrayOrdenado[i] == 1) { arrayFinal[0]++;
+            if (arrayOrdenado[i] == 1) {
+                arrayFinal[0]++;
             }
-            if (arrayOrdenado[i] == 2) { arrayFinal[1]++;
+            if (arrayOrdenado[i] == 2) {
+                arrayFinal[1]++;
             }
-            if (arrayOrdenado[i] == 3) { arrayFinal[2]++;
+            if (arrayOrdenado[i] == 3) {
+                arrayFinal[2]++;
             }
-            if (arrayOrdenado[i] == 4) { arrayFinal[3]++;
+            if (arrayOrdenado[i] == 4) {
+                arrayFinal[3]++;
             }
-            if (arrayOrdenado[i] == 5) { arrayFinal[4]++;
+            if (arrayOrdenado[i] == 5) {
+                arrayFinal[4]++;
             }
         }
 
