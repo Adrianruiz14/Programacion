@@ -13,61 +13,54 @@ public class Main {
         // llevar
         // en cada una de las siguientes posiciones, el numero total de cada numero
 
-        int[] ArrayMain = primerArray();
+        int[] ArrayMain = primerArray(); // NO HACE FALTA PONER NIGUN PARAMETRO PORQUE NO HAY NADA
 
         System.out.println(Arrays.toString(ArrayMain));
 
-        int[] ArrayFinalMain = ordenarArray(ArrayMain); // ESTO ES PARA TRAERME EL RETURN
+        int[] ArrayFinalMain = ordenarArray(ArrayMain); // ESTO ES PARA TRAERME EL RETURN Y LA VINCULACIÓN
 
         System.out.println(Arrays.toString(ArrayFinalMain));
 
     }
 
-    public static int[] primerArray() {
+    public static int[] primerArray() { // NO HACE FALTA PONER NIGUN PARAMETRO PORQUE NO HAY NADA QUE RECIBIR, SOLO
+                                        // MANDAR
 
         int[] arrayInt;
-        arrayInt = new int[10];
+        arrayInt = new int[100];
 
         for (int i = 0; i < arrayInt.length; i++) {
-            arrayInt[i] = random.nextInt(1, 6);
+            arrayInt[i] = random.nextInt(100);
         }
 
         return arrayInt;
-
     }
 
-    public static int[] ordenarArray(int[] arrayMain) {
+    public static int[] ordenarArray(int[] arrayMain) { // MOLDE, LO VINCULAS CON "LINEA 20"
 
-        int[] arrayOrdenado = arrayMain;
+        // Buscar el elemento máximo en arrayMain
+        int tamanio = buscarMax(arrayMain);
 
-        int[] arrayFinal = new int[5];
-        arrayFinal[0] = 0;
-        arrayFinal[1] = 0;
-        arrayFinal[2] = 0;
-        arrayFinal[3] = 0;
-        arrayFinal[4] = 0;
+        int[] arrayFinal = new int[tamanio];
 
         // Tengo que contar cuantos numeros iguales hay en cada posición
-        for (int i = 0; i < arrayOrdenado.length; i++) {
+        for (int i = 0; i < arrayMain.length; i++) {
 
-            if (arrayOrdenado[i] == 1) {
-                arrayFinal[0]++;
-            }
-            if (arrayOrdenado[i] == 2) {
-                arrayFinal[1]++;
-            }
-            if (arrayOrdenado[i] == 3) {
-                arrayFinal[2]++;
-            }
-            if (arrayOrdenado[i] == 4) {
-                arrayFinal[3]++;
-            }
-            if (arrayOrdenado[i] == 5) {
-                arrayFinal[4]++;
-            }
+            arrayFinal[arrayMain[i] - 1]++;
         }
 
         return arrayFinal;
+    }
+
+    public static int buscarMax(int[] array) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+
+        return max;
     }
 
 }
