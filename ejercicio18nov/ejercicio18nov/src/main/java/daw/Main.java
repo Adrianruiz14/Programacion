@@ -30,7 +30,7 @@ public class Main {
         arrayInt = new int[100];
 
         for (int i = 0; i < arrayInt.length; i++) {
-            arrayInt[i] = random.nextInt(100);
+            arrayInt[i] = random.nextInt(1, 100);
         }
 
         return arrayInt;
@@ -52,7 +52,7 @@ public class Main {
         return arrayFinal;
     }
 
-    public static int buscarMax(int[] array) {
+    public static int buscarMax(int[] array) { //Buscar máximo de un Array
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
