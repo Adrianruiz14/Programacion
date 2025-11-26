@@ -59,7 +59,7 @@ public class Main {
                 max = array[i];
             }
         }
-
+        
         return max;
     }
 
