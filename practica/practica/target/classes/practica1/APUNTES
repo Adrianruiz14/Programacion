@@ -1,0 +1,87 @@
+import java.util.Scanner; // Importar Scanner
+
+import java.util.Random; // Importar Random
+
+public class ChuletaJava {
+
+// --- 1. STATIC y FINAL ---
+// static: Pertenece a la clase, no al objeto, es decir se puede usar desde cualquier clase.
+// final: Es una constante (no se puede cambiar).
+
+public static final double IVA = 0.21;
+
+public static void main(String[] args) {
+
+// --- 2. LECTURA (Scanner) y RANDOM ---
+
+Scanner sc = new Scanner(System.in);
+Random rand = new Random();
+System.out.println("--- INICIO DEL PROGRAMA ---");
+
+// --- 3. EXCEPCIONES (Try-Catch) ---
+// Envolvemos el código que la puede liar para que no crashee
+
+try {
+System.out.print("¿Cuántos números aleatorios quieres generar? (Introduce un
+entero): ");
+// Si el usuario mete texto aquí, saltará al 'catch'
+int cantidad = sc.nextInt();
+// --- 4. ARRAYS ---
+// Declaración e instanciación
+int[] numeros//DECLARAR = new int[cantidad];//INSTANCIAR->DAR UN VALOR en
+//este caso vacio porque es nuevo(vacio no significa que no tenga tamaño sino que sus
+//posiciones=0;
+// --- 5. BUCLES (For Clásico) ---
+// Usamos 'for i' cuando necesitamos modificar el array o saber el índice
+
+
+for (int i = 0; i < numeros.length; i++) {
+// Genera número aleatorio del 0 al 99
+numeros[i] = rand.nextInt(100);
+}
+for (int i = numeros.length; i > 0; i–) {
+//RECORRE EL ARRAY DE ATRAS HACIA DELANTE
+}
+// Llamada a una FUNCIÓN (ver abajo)
+imprimirArray(numeros);
+// Ejemplo de cálculo usando la constante STATIC FINAL
+double precioConIva = calcularPrecioConIva(numeros[0]);
+
+System.out.println("El primer número (" + numeros[0] + ") con IVA es: " +
+precioConIva);
+// Provocamos un error a propósito para probar la excepción
+System.out.println("Intentando acceder a una posición que no existe...");
+System.out.println(numeros[1000]); // Esto lanzará
+ArrayIndexOutOfBoundsException
+} catch (java.util.InputMismatchException e) {
+// Captura si el usuario escribe "hola" en vez de un número
+System.out.println("¡ERROR! Debías introducir un número entero.");
+} catch (ArrayIndexOutOfBoundsException e) {
+// Captura si intentamos leer una posición del array que no existe
+System.out.println("¡ERROR! Te has salido de los límites del array.");
+} catch (Exception e) {
+// Captura cualquier otro error genérico
+System.out.println("Ocurrió un error inesperado: " + e.getMessage());
+} finally {
+// Se ejecuta SIEMPRE (haya error o no)
+// Es el lugar perfecto para cerrar el Scanner
+sc.close();
+System.out.println("--- FIN DEL PROGRAMA (Scanner cerrado) ---");
+}
+}
+// --- 6. FUNCIONES (Métodos) ---
+// Función 'void': Hace algo pero no devuelve ningún valor
+public static void imprimirArray(int[] lista) {
+System.out.print("Tus números son: ");
+// --- BUCLE (For-Each) ---
+// Usamos 'for each' para LEER datos cómodamente
+for (int n : lista) {
+System.out.print(n + " ");
+}
+System.out.println(); // Salto de línea
+}
+// Función con 'return': Devuelve un dato (double en este caso)
+public static double calcularPrecioConIva(int precioBase) {
+return precioBase * (1 + IVA); // Usa la constante static final
+}
+}
