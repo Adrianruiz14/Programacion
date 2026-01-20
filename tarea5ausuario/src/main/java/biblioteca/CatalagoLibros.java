@@ -40,9 +40,9 @@ public class CatalagoLibros {
         CatalagoLibros.set(pos, nuevo);
     }
 
-    public void guardar(Libro libro) {
+  public void guardar(Libro libro) {
         CatalagoLibros.add(libro);
-    }
+    }  
 
     public void eliminar(int pos) {
         CatalagoLibros.remove(pos);
