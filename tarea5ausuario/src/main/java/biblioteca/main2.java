@@ -74,7 +74,9 @@ public class main2 {
                     case 1:
                     // NECESITO ESTUDIANTES-CATALOGOLIBROS Y LOCALDATE PARA HACER UN PRESTAMO Y DEVOLUCIÓN
                     // ns hacerlo vico, socorro
-                    // METODO
+                    // METODO         
+                    Prestamo p1 = crearPrestamo();
+                    catalogoPrestamos.añadir(p1);
 
                     break;
                       case   2:
@@ -136,8 +138,5 @@ public class main2 {
             }
         } while (true);
         
-    } }
-
-
-
-
+    }
+}
