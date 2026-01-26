@@ -65,7 +65,7 @@ public class main2 {
                     case 1:
                     // NECESITO ESTUDIANTES-CATALOGOLIBROS Y LOCALDATE PARA HACER UN PRESTAMO Y DEVOLUCIÓN
                     // ns hacerlo vico, socorro
-                    // METODO
+                    // METODO NEW PRESTAMO, 
 
                     break;
 
@@ -124,7 +124,7 @@ public class main2 {
                 JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         } while (true);
-        
+
     } }
 
 
