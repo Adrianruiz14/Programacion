@@ -1,20 +1,29 @@
 package biblioteca;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 public class main2 {
 
+    private static CarteraEstudiantes cartera = new CarteraEstudiantes(new ArrayList<>());
+    private static CatalagoLibros catalogo = new CatalagoLibros();
+    private static CatalogoPrestamos catalogoPrestamos = new CatalogoPrestamos();
+
+    public static Prestamo crearPrestamo() {
+
+        String dni = JOptionPane.showInputDialog( "Introduzca su DNI");
+        Estudiante estudiante = cartera.buscarPorDni(dni);
+        String librobuscar = JOptionPane.showInputDialog("Introduzca el ISBN del libro");
+        Libro libro = catalogo.buscarPorIsbn(librobuscar);
+        Prestamo p1 = new Prestamo(0, estudiante, libro, LocalDate.now());
+        return p1;
+    }
+
     public static void main(String[] args) {
 
         int opcion;
-        ArrayList<Prestamo> prestamos = new ArrayList<>();
-        ArrayList<Libro> libros = new ArrayList<>();
-        ArrayList<Estudiante> estudiantes = new ArrayList<>();
-        CarteraEstudiantes cartera = new CarteraEstudiantes(new ArrayList<>());
-        CatalagoLibros catalogo = new CatalagoLibros();              
-
         Libro libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez", 1967, 9788437604313L, Genero.FICCION);
         Libro libro2 = new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605, 9788499891508L, Genero.NOVELA);
         Libro libro3 = new Libro("La sombra del viento", "Carlos Ruiz Zafón", 2001, 9788408051234L, Genero.RELATO);
@@ -65,16 +74,18 @@ public class main2 {
                     case 1:
                     // NECESITO ESTUDIANTES-CATALOGOLIBROS Y LOCALDATE PARA HACER UN PRESTAMO Y DEVOLUCIÓN
                     // ns hacerlo vico, socorro
-                    // METODO NEW PRESTAMO, 
+                    // METODO
 
                     break;
-
-
                       case   2:
-                      prestamos.remove(prestamos);
+
+                     catalogoPrestamos.eliminar(null);
+
                         break;
          
                        case  3:
+
+                     catalogoPrestamos.cambiar(opcion, null);
             
 
                         case 4:
@@ -124,7 +135,7 @@ public class main2 {
                 JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         } while (true);
-
+        
     } }
 
 
