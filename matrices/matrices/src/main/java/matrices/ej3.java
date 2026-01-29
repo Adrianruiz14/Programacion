@@ -35,8 +35,7 @@ public class ej3 {
         }
         // Llenamos las filas
         for (int i = 1; i < avion.length; i++) {
-            // El "cast" manual que buscabas se hace así para números: ¿Por qué lo haces
-            // Adrian? Matriz es String = i no puede ser int,
+            // Matriz es String = i no puede ser int,
             // TIENE QUE SER STRING ------IMPORTANTE----------
             avion[i][0] = i + "";
 
@@ -49,7 +48,7 @@ public class ej3 {
 
         // Imprimir avión
 
-        System.out.println("----------Estado Actual del Avión---------------");
+        System.out.println("----------Estado Actual del Avión------------------------------");
 
         for (int i = 0; i < avion.length; i++) {
             for (int j = 0; j < avion[i].length; j++) {
@@ -100,19 +99,22 @@ public class ej3 {
         if (menu == null) {
             break;
         }
+
         switch (eleccion) {
 
             case 1:
 
    try {
+
         String opcion1Fila = JOptionPane.showInputDialog("Dígame el número de fila (1-30)");
-        if (opcion1Fila == null) break;
+   
         int fila = Integer.parseInt(opcion1Fila);
 
         String letraColumna = JOptionPane.showInputDialog("Dígame su columna (A-F)").toUpperCase(); // toUpperCase es pasarlo a mayuscula automaticamente
-        if (letraColumna == null) break;
+  
 
         // Pasarlo de letra a numero, lo siento vico no se me ocurrió nada mejor
+
         int columna = 0;
         switch (letraColumna) {
             case "A" -> columna = 1;
@@ -127,9 +129,7 @@ public class ej3 {
         if (columna != -1) {
             avionMenu[fila][columna] = "R";
             System.out.println("------ ASIENTO " + fila + letraColumna + " RESERVADO ------");
-        } else {
-            JOptionPane.showMessageDialog(null, "La columna " + letraColumna + " no existe.");
-        }
+        } 
 
     } catch (NumberFormatException nfe) {
         JOptionPane.showMessageDialog(null, " En la fila debes poner un número.");
@@ -142,12 +142,11 @@ public class ej3 {
 
        try {
         String opcion1Fila = JOptionPane.showInputDialog("Dígame el número de su fila reservada (1-30)");
-        if (opcion1Fila == null) break;
+     
         int fila = Integer.parseInt(opcion1Fila);
 
         String letraColumna = JOptionPane.showInputDialog("Dígame la letra de su columna reservada (A-F)").toUpperCase(); // toUpperCase es pasarlo a mayuscula automaticamente
-        if (letraColumna == null) break;
-
+   
         // Pasarlo de letra a numero, lo siento vico no se me ocurrió nada mejor
         int columna = 0;
         switch (letraColumna) {
